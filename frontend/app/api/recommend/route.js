@@ -33,7 +33,7 @@ export async function POST(request) {
     const inputMovie = aiData.input;
 
     // Compute match reasons and fetch actual TMDB posters
-    const TMDB_API_KEY = "62e669489429009d8a518b6366fe113b";
+    const TMDB_API_KEY = process.env.TMDB_API_KEY;
     const inputGenres = new Set(inputMovie.genres || []);
     
     const recommendations = await Promise.all(scored.map(async (rec) => {
