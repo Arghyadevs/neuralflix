@@ -1,7 +1,7 @@
 <div align="center">
 
 <!-- Wave header -->
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:00E5FF,100:BB86FC&height=140&section=header&text=NeuralFlix&fontSize=52&fontColor=ffffff&fontAlignY=45&desc=Semantic%20Movie%20and%20TV%20Recommendation%20Engine&descAlignY=68&descSize=16&animation=fadeIn" width="100%"/>
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:00E5FF,100:BB86FC&height=140&section=header&text=NeuralFlix&fontSize=52&fontColor=ffffff&fontAlignY=45&desc=Semantic%20Movie%20%26%20TV%20Recommendation%20Engine&descAlignY=68&descSize=16&animation=fadeIn" width="100%"/>
 
 <!-- Typing animation -->
 <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=600&size=18&pause=1200&color=00E5FF&center=true&vCenter=true&width=600&lines=FAISS+Vector+Engine+%E2%80%94+768+Dimensions;Powered+by+all-mpnet-base-v2;Cosine+Similarity+Search;Find+your+next+obsession." alt="Typing SVG" />
@@ -106,7 +106,7 @@ media_titles.json     ←  title list for autocomplete
 ### 3 — Start the backend
 
 ```bash
-uvicorn main:app --reload --port 8000
+cd backend && uvicorn main:app --reload --port 8000
 ```
 
 ### 4 — Start the frontend
@@ -159,12 +159,19 @@ After ranking by cosine similarity, a second pass generates human-readable match
 
 ```
 neuralflix/
-├── main.py                      # FastAPI backend
+├── README.md
 ├── movie_recommender.ipynb      # Data pipeline (DB + FAISS)
 ├── media_database.json          # Generated: metadata
 ├── media.faiss                  # Generated: FAISS index
 ├── embeddings.npy               # Generated: numpy matrix
 ├── media_titles.json            # Generated: autocomplete list
+│
+├── assets/                      # README visuals
+│   ├── neural.svg               # Animated neural engine diagram
+│   └── pipeline.svg             # Animated pipeline diagram
+│
+├── backend/
+│   └── main.py                  # FastAPI backend + FAISS search
 │
 └── frontend/
     ├── components/
@@ -175,6 +182,11 @@ neuralflix/
     │   ├── NeuralLoader.jsx     # Animated FAISS progress
     │   └── TerminalPanel.jsx    # Nerd-mode live log panel
     └── public/
+        ├── file.svg
+        ├── globe.svg
+        ├── next.svg
+        ├── vercel.svg
+        └── window.svg
 ```
 
 <br/>
