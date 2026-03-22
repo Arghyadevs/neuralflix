@@ -7,7 +7,7 @@ export async function GET(request, { params }) {
     const { title } = await params;
     const decodedTitle = decodeURIComponent(title);
 
-    const filePath = path.join(process.cwd(), "..", "media_database.json");
+    const filePath = path.join(process.cwd(), "..", "backend", "media_database.json");
     const data = fs.readFileSync(filePath, "utf-8");
     const db = JSON.parse(data);
 

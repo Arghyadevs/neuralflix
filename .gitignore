@@ -1,4 +1,11 @@
 /.qodo
-title.crew.tsv
-title.basics.tsv
-title.principals.tsv
+backend/title.crew.tsv
+backend/title.basics.tsv
+backend/title.principals.tsv
+backend/title.ratings.tsv
+backend/venv/
+backend/__pycache__/
+backend/.env
+backend/.DS_Store
+frontend/.DS_Store
+.DS_Store
