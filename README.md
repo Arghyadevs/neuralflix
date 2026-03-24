@@ -277,7 +277,7 @@ neuralflix/
       <sub>FastAPI · Next.js · EC2 · Amplify · DevOps</sub>
     </td>
     <td align="center">
-      <a href="https://github.com/Lucifer2001SoumyaJanaJGEC2001">
+      <a href="https://github.com/SoumyaJanaJGEC2001">
         <img src="https://img.shields.io/badge/Lucifer-BB86FC?style=for-the-badge&logo=github&logoColor=black" alt="Lucifer"/>
       </a>
       <br/><br/>
