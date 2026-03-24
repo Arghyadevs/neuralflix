@@ -14,7 +14,8 @@ export async function POST(request) {
     }
 
     // Fetch recommendations from local FastAPI python server
-    const aiResponse = await fetch("http://127.0.0.1:8000/recommend", {
+    const aiResponse = await fetch("http://13.222.149.92:8000/recommend", {
+      // const aiResponse = await fetch("http://127.0.0.1:8000/recommend", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ title: title, top_k: 8 }),
@@ -35,7 +36,7 @@ export async function POST(request) {
     // Compute match reasons and fetch actual TMDB posters
     const TMDB_API_KEY = process.env.TMDB_API_KEY;
     const inputGenres = new Set(inputMovie.genres || []);
-    
+
     const recommendations = await Promise.all(scored.map(async (rec) => {
       const reasons = [];
       const sharedGenres = (rec.genres || []).filter((g) => inputGenres.has(g));
