@@ -64,7 +64,8 @@ export async function POST(request) {
       let posterUrl = null;
       if (rec.tmdb_id) {
         try {
-          const type = (rec.content_type === "TV Series" || rec.content_type === "TV Show") ? "tv" : "movie";
+          const ct = (rec.content_type || "").toLowerCase();
+          const type = (ct === "tv series" || ct === "tv show") ? "tv" : "movie";
           const url = `https://api.themoviedb.org/3/${type}/${rec.tmdb_id}?api_key=${TMDB_API_KEY}`;
           console.log(`Fetching poster for ID: ${rec.tmdb_id}, Type: ${type}, API Key exists: ${!!TMDB_API_KEY}`);
           
