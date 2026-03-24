@@ -15,7 +15,6 @@ export async function POST(request) {
 
     // Fetch recommendations from local FastAPI python server
     const aiResponse = await fetch("http://13.222.149.92:8000/recommend", {
-      // const aiResponse = await fetch("http://127.0.0.1:8000/recommend", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ title: title, top_k: 8 }),
