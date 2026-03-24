@@ -64,11 +64,20 @@ export async function POST(request) {
       let posterUrl = null;
       if (rec.tmdb_id) {
         try {
-          const type = rec.content_type === "TV Series" ? "tv" : "movie";
-          const res = await fetch(`https://api.themoviedb.org/3/${type}/${rec.tmdb_id}?api_key=${TMDB_API_KEY}`);
+          const type = (rec.content_type === "TV Series" || rec.content_type === "TV Show") ? "tv" : "movie";
+          const url = `https://api.themoviedb.org/3/${type}/${rec.tmdb_id}?api_key=${TMDB_API_KEY}`;
+          console.log(`Fetching poster for ID: ${rec.tmdb_id}, Type: ${type}, API Key exists: ${!!TMDB_API_KEY}`);
+          
+          const res = await fetch(url);
+          if (!res.ok) {
+            console.error(`TMDB Fetch Failed for ID: ${rec.tmdb_id}, Status: ${res.status}, URL: ${url.replace(TMDB_API_KEY, "HIDDEN")}`);
+          }
+          
           const tmdbData = await res.json();
           if (tmdbData.poster_path) {
             posterUrl = `https://image.tmdb.org/t/p/w500${tmdbData.poster_path}`;
+          } else {
+            console.log(`No poster_path found for ID: ${rec.tmdb_id}`);
           }
         } catch (e) {
           console.error("Poster fetch failed:", e);
