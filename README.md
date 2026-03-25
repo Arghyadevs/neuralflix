@@ -127,7 +127,7 @@ pip install faiss-cpu sentence-transformers fastapi uvicorn numpy pandas tqdm re
 # Open the notebook and run cells in order:
 jupyter notebook movie_recommender.ipynb
 
-# Cell 1 → Test TMDB API key
+# Cell 1 → Test the TMDB API key
 # Cell 2 → Build media_database.json        (~20 min first run)
 # Cell 3 → Encode vectors + write media.faiss  (~5 min)
 ```
@@ -153,7 +153,7 @@ cd backend && uvicorn main:app --reload --port 8000
 cd frontend && npm install && npm run dev
 ```
 
-Open **http://localhost:3000** 🚀
+Open **http://localhost:3000** 
 
 <br/>
 
